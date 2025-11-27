@@ -1,5 +1,13 @@
+--!strict
+--!optimize 2
+--!native
+
+-- Services
+local InsertService = game:GetService("InsertService")
+local MarketplaceService = game:GetService("MarketplaceService")
+
 -- Returns the image ID in a decal.
-local function imageFromDecal(decalId: number): number
+local function imageFromDecal(decalId: number): string
 	local info = MarketplaceService:GetProductInfo(decalId)
 	assert(info.AssetTypeId == 13, "The provided decal ID is not a decal.")
 	local asset = InsertService:LoadAsset(decalId)
